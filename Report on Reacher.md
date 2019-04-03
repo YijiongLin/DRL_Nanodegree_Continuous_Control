@@ -45,11 +45,25 @@ I still cannot figure out why.
 
 ### 2. Exploration Noise Type
 
-When I first implement the code, I had a reference to the action noise function in the Udacity's DDPG code interacting the pendulum env. I followed it and found out the performance of the uniform random value inside the OU algorithm is poor. And here is the training process of scores graph. 
+When I first implement the code, I had a reference to the action noise function in the Udacity's DDPG code interacting the pendulum env. I followed it and found out the performance of the uniform random value inside the OU algorithm is poor. The relative code is here:
+```python
+    def sample(self):
+        """Update internal state and return it as a noise sample."""
+        x = self.state
+        dx = self.theta * (self.mu - x) + self.sigma * np.random.random(self.size)
+        self.state = x + dx
+        return self.state
+```
+And here is the training process of scores graph. 
 
 <img src="graph_reacher_uniform_noise.png" width="500" height="340" />
 
-So I change it to follow the original OU algorithm, which apply the which got really impressive results.
+So I change fourth line to catch the original OU algorithm, which is the following codes:
+```python
+         dx = self.theta * (self.mu - x) + self.sigma * np.random.random(self.size)
+```
+
+And it got really impressive results.
 
 <img src="graph_reacher_gau_noise.png" width="500" height="340" />
 
