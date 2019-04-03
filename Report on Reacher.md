@@ -34,10 +34,10 @@ There are several phenomenons showed up in this experiment worth to talked about
 
 The first things is about the training time. In the beginning, the training time is extremely slow, about 2 episodes per minutes. I have overhauled a bunch of possible problems, finally I found out the reason is thatI implement the sample collecting process in the training roop. The specific part of the code is 
 
-'''python
+```python
 for s,a,r,ns,d in zip(states, actions, rewards, next_states, dones):
     agent.step(s,a,r,ns,d)
-'''
+```
 
 And when I take these two lines into the 'step' method of Agent class, the training speed boosted!
 
