@@ -47,11 +47,11 @@ I still cannot figure out why.
 
 When I first implement the code, I had a reference to the action noise function in the Udacity's DDPG code interacting the pendulum env. I followed it and found out the performance of the uniform random value inside the OU algorithm is poor. And here is the training process of scores graph. 
 
-<img src="graph_reacher_uniform_noise.png" width="400" height="260" />
+<img src="graph_reacher_uniform_noise.png" width="500" height="340" />
 
 So I change it to follow the original OU algorithm, which apply the which got really impressive results.
 
-<img src="graph_reacher_gau_noise.png" width="400" height="260" />
+<img src="graph_reacher_gau_noise.png" width="500" height="340" />
 
 ### 3. Analyzing the Udacity Admentation
 
@@ -59,7 +59,7 @@ So I change it to follow the original OU algorithm, which apply the which got re
 
    In my perspecitve, I think this way is just to delay the update rate, having no improvement on the real algorithm performance, which means it is just to make it seem reliable and stable in short term, but it still cannot last in the long run.  So what is the problem in Udacity orginal DDPG implement code? Well, I guess the reason is the noise type. 
   
-<img src="crawl1.png" width="400" height="260" />
+<img src="crawl1.png" width="500" height="340" />
 
 ## Future Work
 
