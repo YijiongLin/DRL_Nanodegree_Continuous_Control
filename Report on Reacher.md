@@ -72,7 +72,10 @@ And it got really impressive results.
    The indication in Udacity have such a improvement, quote "In particular, instead of updating the actor and critic networks 20 times at every timestep, we amended the code to update the networks 10 times after every 20 timesteps. The corresponding scores are plotted below."
 
    In my perspecitve, I think this way is just to delay the update rate, having no improvement on the real algorithm performance, which means it is just to make it seem reliable and stable in short term, but it still cannot last in the long run.  So what is the problem in Udacity orginal DDPG implement code? Well, I guess the reason is the noise type. 
-  
+### 4. Implement the DDPG in Crawler!
+
+I used the codes training in Reacher, and the reasult is not that good as the former one. I guess the reason is that we have to deal with a bigger state space and action space in the crawler env, and the vanilla DDPG is not suitable again, which just converge to around 40 rewards while the benchmark of crawler is 2000 at least in the static type.
+
 <img src="crawl1.png" width="500" height="340" />
 
 ## Future Work
