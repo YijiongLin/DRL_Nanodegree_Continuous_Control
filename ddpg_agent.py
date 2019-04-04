@@ -70,9 +70,9 @@ class Agent():
             self.memory.add(s,a,r,ns,d)
             
         if len(self.memory) > BATCH_SIZE:
-#             for i in range(20):
-            states,actions,rewards,next_states,dones  = self.memory.sample()
-            self.learn(states,actions,rewards,next_states,dones)
+            for i in range(12):
+                states,actions,rewards,next_states,dones  = self.memory.sample()
+                self.learn(states,actions,rewards,next_states,dones)
 
     def learn(self,states,actions,rewards,next_states,dones):
         # Update Critic
