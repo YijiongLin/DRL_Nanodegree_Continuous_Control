@@ -60,7 +60,7 @@ And here is the training process of scores graph.
 
 So I change fourth line to catch the original OU algorithm, which is the following codes:
 ```python
-         dx = self.theta * (self.mu - x) + self.sigma * np.random.random(self.size)
+         dx = self.theta * (self.mu - x) + self.sigma * np.random.normal(self.size)
 ```
 
 And it got really impressive results.
